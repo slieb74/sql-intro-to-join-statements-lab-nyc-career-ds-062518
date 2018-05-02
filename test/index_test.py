@@ -1,12 +1,12 @@
 import unittest, sqlite3
 from sql_queries import *
 
-connection = sqlite3.connect('./superheroes.db')
+connection = sqlite3.connect('../superheroes.db')
 cursor = connection.cursor()
 
 class TestJoinStatements(unittest.TestCase):
 
-    file = open("./sql_queries.py", "r")
+    file = open("../sql_queries.py", "r")
     file.read()
 
     def test_select_hero_names_and_squad_names_of_heroes_belonging_to_a_team(self):
