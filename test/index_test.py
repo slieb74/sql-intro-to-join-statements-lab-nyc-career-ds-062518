@@ -1,4 +1,6 @@
 import unittest, sqlite3
+import sys
+sys.path.insert(0, '..')
 from sql_queries import *
 
 connection = sqlite3.connect('../superheroes.db')
