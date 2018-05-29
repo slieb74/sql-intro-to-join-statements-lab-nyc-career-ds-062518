@@ -8,9 +8,6 @@ cursor = connection.cursor()
 
 class TestJoinStatements(unittest.TestCase):
 
-    file = open("../sql_queries.py", "r")
-    file.read()
-
     def test_select_hero_names_and_squad_names_of_heroes_belonging_to_a_team(self):
         result = [('Batman', 'Justice League'), ('Superman', 'Justice League'), ('Thor', 'Avengers'), ('Iron Man', 'Avengers'), ('Wonder Woman', 'Justice League'), ('Captain America', 'Avengers'), ('Aquaman', 'Justice League'), ('Black Panther', 'Avengers'), ('Black Widow', 'Avengers'), ('Hulk', 'Avengers'), ('Cyborg', 'Justice League'), ('Green Lantern', 'Justice League')]
         self.assertEqual(cursor.execute(select_hero_names_and_squad_names_of_heroes_belonging_to_a_team()).fetchall(), result)
