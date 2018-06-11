@@ -131,7 +131,7 @@ Note that we are using sqlite3, which does not support `RIGHT JOIN` or `FULL OUT
 name          |num_of_members
 --------------|--------------
 Avengers      |6             
-Justice Leauge|6             
+Justice League|6             
 The Illuminati|0             
 
 The Illuminati haven't existed since the late 18th Century, so perhaps their lack of members isn't such a surprise!
