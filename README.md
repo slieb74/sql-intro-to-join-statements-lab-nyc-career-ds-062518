@@ -1,7 +1,7 @@
 
 # Introduction to JOIN Statements Lab
 
-In this lab we will practice writing JOIN statements to write queries across two tables.  The tables will be associated through a "has many" and "belongs to" relationship.
+In this lab we will practice writing JOIN statements to query across two tables.  The tables will be associated through a "has many" and "belongs to" relationship.
 
 ## Objectives
 
@@ -11,7 +11,7 @@ In this lab we will practice writing JOIN statements to write queries across two
 
 ## Superheroes and Super Squads
 
-Our database contains two tables: `superheroes` and `squads`.  We have seeded the database with fifteen superheroes and three superhero teams.  The superheroes table contains a column of foreign keys called `squad_id`.  Each superhero is assigned to one of the `squads` depending upon the assigned `squad_id`.  Therefore, a superhero "belong to" the team with that matching `id`.  The two tables are shown below:
+Our database contains two tables: `superheroes` and `squads`.  We have seeded the database with fifteen superheroes and three superhero teams.  The superheroes table contains a column of foreign keys called `squad_id`.  Each superhero is assigned to one of the `squads` depending upon the assigned `squad_id`.  Therefore, a superhero "belongs to" the team with that matching `id`.  The two tables are shown below:
 
 
 `Squads:`
@@ -47,7 +47,7 @@ id  |name           |real_identity        |superpower                     |weakn
 
 ## Queries
 
-Write your queries in the `sql_queries.py` file.  As always, put your queries inside the string returned in each function to get the tests to pass.  If you wish to write your query over multiple lines for clarity, wrap it inside triple quotation marks as so:
+Write your queries in the `sql_queries.py` file.  As always, put your queries inside the string returned in each function to get the tests to pass.  If you wish to write your query over multiple lines for clarity, wrap it inside triple quotation marks like so:
 
 >```sql
  """SELECT dogs.name owner.name
@@ -81,7 +81,7 @@ Green Lantern   |Justice League
 
 Great!  We selected all the superheroes belonging to a team.  However, our formatting is messy.  Let’s rewrite this query to group all the above superheroes according to their team name.  Also, both columns are called `name`, so let’s alias the `squads.name` to `team`.
 
-The query will return the following:
+The query should return the following:
 
 name            |team          
 ----------------|--------------
@@ -124,14 +124,20 @@ Green Lantern    |magic ring                      |Justice League
 
 #### 4. `all_squads`
 
-Take another look at our `squads` table.  Notice that there is also one squad with NO members!  Write a `JOIN` statement that return the `name` of each squad and counts all of its members under the alias `num_of_members`.  (*Hint:* You will need to use a `GROUP BY clause` here.)
+Take another look at our `squads` table.  Notice that there is also one squad with NO members!  Write a `JOIN` statement that returns the `name` of each squad and a count for all of its members aliased as `num_of_members`.  (*Hint:* You will need to use a `GROUP BY clause` here.)
 
-Note that we are using sqlite3, which does not support `RIGHT JOIN` or `FULL OUTER JOIN`.  We need to reformat our query so that we can use `LEFT JOIN` to get the result we want.  The query should return the following:
+Note that we are using sqlite3, which does not support `RIGHT JOIN` or `FULL OUTER JOIN`.  We need to reformat our query so that we can use `LEFT JOIN` to get the result we want.  
+
+The query should return the following:
 
 name          |num_of_members
 --------------|--------------
 Avengers      |6             
-Justice League|6             
+Justice Leauge|6             
 The Illuminati|0             
 
 The Illuminati haven't existed since the late 18th Century, so perhaps their lack of members isn't such a surprise!
+
+## Summary
+
+Great job! In this lab, we practiced writing JOIN statements that return to us information from two tables instead of just one table, like when we were writing SELECT statements. 
