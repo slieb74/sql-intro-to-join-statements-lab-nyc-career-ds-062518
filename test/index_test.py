@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0, '..')
 from sql_queries import *
 
-connection = sqlite3.connect('../superheroes.db')
+connection = sqlite3.connect('./superheroes.db')
 cursor = connection.cursor()
 
 class TestJoinStatements(unittest.TestCase):
